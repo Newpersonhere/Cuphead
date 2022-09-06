@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour {
     [SerializeField] private float _minCooldown = 5;
 
     [Tooltip("This sets the current health of cuphead")] [SerializeField]
-    private int health = 3;
+    private int health = 999;
 
     public delegate void Died();
 
@@ -67,7 +67,7 @@ public class PlayerHealth : MonoBehaviour {
         if (Time.time - _lastDamage < _minCooldown) return;
 
         _lastDamage = Time.time;
-        health -= 1;
+        health -= 999;
         StartCoroutine(Blink());
 
         switch (health) {
